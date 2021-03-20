@@ -11,7 +11,9 @@
     "cSpell.enabled": true,
     "cSpell.words": [
         "Luxon",
+        "MariaDB",
         "Novak",
+        "Postgre",
         "TypeORM",
         "bot's",
         "chrono",
