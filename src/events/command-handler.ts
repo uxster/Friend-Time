@@ -3,14 +3,14 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { Command } from '../commands';
 import { GuildData, UserData } from '../database/entities';
-import { ConfigFile } from '../models/config';
+import { ConfigFile, DebugFile } from '../models/config';
 import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang, Logger } from '../services';
 import { MessageUtils, PermissionUtils } from '../utils';
 
 let Config: ConfigFile = require('../../config/config.json');
-let Debug = require('../../config/debug.json');
+let Debug: DebugFile = require('../../config/debug.json');
 let Logs = require('../../lang/logs.json');
 
 export class CommandHandler {

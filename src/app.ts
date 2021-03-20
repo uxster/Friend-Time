@@ -1,13 +1,13 @@
-import { ShardingManager } from 'discord.js-light';
+import { ShardingManager, ShardingManagerMode } from 'discord.js-light';
 
 import { UpdateServerCountJob } from './jobs';
 import { Manager } from './manager';
-import { ConfigFile } from './models/config';
+import { ConfigFile, DebugFile } from './models/config';
 import { HttpService, Logger } from './services';
 import { MathUtils, ShardUtils } from './utils';
 
 let Config: ConfigFile = require('../config/config.json');
-let Debug = require('../config/debug.json');
+let Debug: DebugFile = require('../config/debug.json');
 let Logs = require('../lang/logs.json');
 
 async function start(): Promise<void> {
@@ -40,7 +40,9 @@ async function start(): Promise<void> {
 
     let shardManager = new ShardingManager('dist/start.js', {
         token: Config.client.token,
-        mode: Debug.override.shardMode.enabled ? Debug.override.shardMode.value : 'worker',
+        mode: Debug.override.shardMode.enabled
+            ? (Debug.override.shardMode.value as ShardingManagerMode)
+            : 'worker',
         respawn: true,
         totalShards,
         shardList: myShardIds,

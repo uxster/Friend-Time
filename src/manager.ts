@@ -1,11 +1,11 @@
 import { Shard, ShardingManager } from 'discord.js-light';
 
 import { Job } from './jobs';
-import { ConfigFile } from './models/config';
+import { ConfigFile, DebugFile } from './models/config';
 import { Logger } from './services';
 
 let Config: ConfigFile = require('../config/config.json');
-let Debug = require('../config/debug.json');
+let Debug: DebugFile = require('../config/debug.json');
 let Logs = require('../lang/logs.json');
 
 export class Manager {

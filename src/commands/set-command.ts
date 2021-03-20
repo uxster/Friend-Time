@@ -1,7 +1,7 @@
 import { DMChannel, Message, Permissions, TextChannel } from 'discord.js-light';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
-import { ConfigFile } from '../models/config';
+import { ConfigFile, DebugFile } from '../models/config';
 import { LangCode } from '../models/enums';
 import { YesNo } from '../models/enums/yes-no';
 import { EventData } from '../models/internal-models';
@@ -12,7 +12,7 @@ import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils
 import { Command } from './command';
 
 let Config: ConfigFile = require('../../config/config.json');
-let Debug = require('../../config/debug.json');
+let Debug: DebugFile = require('../../config/debug.json');
 
 export class SetCommand implements Command {
     public requireGuild = false;
