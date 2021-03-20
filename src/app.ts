@@ -2,10 +2,11 @@ import { ShardingManager } from 'discord.js-light';
 
 import { UpdateServerCountJob } from './jobs';
 import { Manager } from './manager';
+import { ConfigFile } from './models/config';
 import { HttpService, Logger } from './services';
 import { MathUtils, ShardUtils } from './utils';
 
-let Config = require('../config/config.json');
+let Config: ConfigFile = require('../config/config.json');
 let Debug = require('../config/debug.json');
 let Logs = require('../lang/logs.json');
 

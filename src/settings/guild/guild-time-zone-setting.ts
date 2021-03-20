@@ -3,13 +3,14 @@ import { Message } from 'discord.js-light';
 
 import { Confirmation, Setting } from '..';
 import { GuildData } from '../../database/entities';
+import { ConfigFile } from '../../models/config';
 import { LangCode, TimeFormatOption } from '../../models/enums';
 import { YesNo } from '../../models/enums/yes-no';
 import { EventData } from '../../models/internal-models';
 import { Lang } from '../../services';
 import { CollectorUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../../utils';
 
-let Config = require('../../../config/config.json');
+let Config: ConfigFile = require('../../../config/config.json');
 
 export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirmation {
     public default = null;

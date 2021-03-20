@@ -2,6 +2,7 @@ import { ParsedResult } from 'chrono-node';
 import { Message, MessageEmbed } from 'discord.js-light';
 
 import { GuildBotData } from '../database/entities';
+import { ConfigFile } from '../models/config';
 import { DateFormatOption } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { ConvertReaction } from '../reactions';
@@ -21,7 +22,7 @@ import {
 import { DataUtils, EmbedUtils, MessageUtils, PermissionUtils } from '../utils';
 import { Trigger } from './trigger';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class ConvertTrigger implements Trigger {
     public requireGuild = true;

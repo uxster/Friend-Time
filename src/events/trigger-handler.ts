@@ -2,10 +2,11 @@ import { Message, TextChannel } from 'discord.js-light';
 import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { GuildData, UserData } from '../database/entities';
+import { ConfigFile } from '../models/config';
 import { EventData } from '../models/internal-models';
 import { Trigger } from '../triggers';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class TriggerHandler {
     private rateLimiter = new RateLimiter(

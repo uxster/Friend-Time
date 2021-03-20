@@ -1,4 +1,4 @@
-import { Client } from 'discord.js-light';
+import { Client, IntentsString, PartialTypes } from 'discord.js-light';
 
 import { Bot } from './bot';
 import {
@@ -28,6 +28,7 @@ import {
     ReactionHandler,
     TriggerHandler,
 } from './events';
+import { ConfigFile } from './models/config';
 import { ConvertReaction } from './reactions';
 import { Logger, ReminderService, TimeService } from './services';
 import { SettingManager } from './settings';
@@ -50,15 +51,17 @@ import {
 } from './settings/user';
 import { ConvertTrigger } from './triggers';
 
-let Config = require('../config/config.json');
+let Config: ConfigFile = require('../config/config.json');
 
 async function start(): Promise<void> {
     await Database.connect();
 
     let client = new Client({
         // discord.js Options
-        ws: { intents: Config.client.intents },
-        partials: Config.client.partials,
+        ws: {
+            intents: Config.client.intents as IntentsString[],
+        },
+        partials: Config.client.partials as PartialTypes[],
         messageCacheMaxSize: Config.client.caches.messages.size,
         messageCacheLifetime: Config.client.caches.messages.lifetime,
         messageSweepInterval: Config.client.caches.messages.sweepInterval,

@@ -17,10 +17,11 @@ import {
     ReactionRetriever,
 } from 'discord.js-collector-utils';
 import { MessageUtils, PermissionUtils } from '.';
+import { ConfigFile } from '../models/config';
 import { LangCode } from '../models/enums';
 import { Lang } from '../services';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class CollectorUtils {
     public static createMsgCollect(

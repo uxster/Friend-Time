@@ -1,6 +1,7 @@
 import { Message, Permissions } from 'discord.js-light';
 
 import { GuildData } from '../database/entities';
+import { ConfigFile } from '../models/config';
 import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
@@ -8,7 +9,7 @@ import { SettingManager } from '../settings';
 import { ClientUtils, FormatUtils, MessageUtils, RegexUtils } from '../utils';
 import { Command } from './command';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class BotCommand implements Command {
     public requireGuild = true;

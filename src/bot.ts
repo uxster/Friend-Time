@@ -10,10 +10,11 @@ import {
 
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { Job } from './jobs';
+import { ConfigFile } from './models/config';
 import { Logger } from './services';
 import { PartialUtils } from './utils';
 
-let Config = require('../config/config.json');
+let Config: ConfigFile = require('../config/config.json');
 let Debug = require('../config/debug.json');
 let Logs = require('../lang/logs.json');
 

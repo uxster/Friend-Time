@@ -2,6 +2,7 @@ import { MessageReaction, User } from 'discord.js-light';
 
 import { Reaction } from '.';
 import { GuildBotData } from '../database/entities';
+import { ConfigFile } from '../models/config';
 import { EventData } from '../models/internal-models';
 import { Lang, ReminderService, TimeService } from '../services';
 import { BotDateFormatSetting, BotTimeZoneSetting } from '../settings/bot';
@@ -13,7 +14,7 @@ import {
 } from '../settings/user';
 import { DataUtils, EmbedUtils, FormatUtils, MessageUtils } from '../utils';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class ConvertReaction implements Reaction {
     public emoji: string = Config.reactions.convert;

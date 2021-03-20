@@ -2,8 +2,9 @@ import { User } from 'discord.js-light';
 
 import { TimeZoneUtils } from '.';
 import { GuildBotData, GuildData, UserData } from '../database/entities';
+import { ConfigFile } from '../models/config';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class DataUtils {
     public static async getTargetData(

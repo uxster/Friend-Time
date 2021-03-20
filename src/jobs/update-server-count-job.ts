@@ -1,7 +1,7 @@
 import { ShardingManager } from 'discord.js-light';
 import schedule from 'node-schedule';
 
-import { BotSite } from '../models/config/bot-sites';
+import { BotSite } from '../models/config';
 import { HttpService, Lang, Logger } from '../services';
 import { ShardUtils } from '../utils';
 import { Job } from './job';

@@ -1,9 +1,10 @@
 import { Chrono, en, ParsedComponents, ParsedResult } from 'chrono-node';
+import { ConfigFile } from '../models/config';
 import { DateFormat, DateFormatOption, LangCode, TimeFormatOption } from '../models/enums';
 import { FormattedTimeResult } from '../models/internal-models';
 import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils';
 
-let Config = require('../../config/config.json');
+let Config: ConfigFile = require('../../config/config.json');
 
 export class TimeService {
     private blacklistRegexes: RegExp[];
