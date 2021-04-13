@@ -34,6 +34,8 @@ export class ShardsController implements Controller {
                     error: false,
                 };
 
+                console.log('Shard Info:', shardInfo);
+
                 try {
                     shardInfo.uptimeSecs = Math.floor(
                         (await shard.fetchClientValue('uptime')) / 1000
